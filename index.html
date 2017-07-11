@@ -39,6 +39,11 @@
 			</div>
 			<!-- 主体 -->
 			<div ng-class="{body:true,collapse:collapsed}">
+			<!-- <div ng-hide="loading">
+				<img src="public/images/loading2.gif" height="200" width="160" alt="">
+			</div>	 -->
+			<!-- 使用自定义指令，添加image节点 -->
+			<div loading src="public/images/loading2.gif" ng-hide="loading"></div>
 			<div ng-view></div>
 			</div>
 		</div>
@@ -48,4 +53,5 @@
 <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
 <script type="text/javascript" src="scripts/app.js"></script>
 <script type="text/javascript" src="scripts/controllers.js"></script>
+<script type="text/javascript" src="scripts/directives.js"></script>
 </html>
