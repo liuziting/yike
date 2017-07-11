@@ -1,6 +1,6 @@
 //app.js是整个angularjs 应用程序的入口
 //创建应用模块
-var yike = angular.module("yike",['Controllers']);
+var yike = angular.module("yike",["ngRoute","Controllers"]);
 //定义toggle方法
 //$(function(){})
 yike.run(["$rootScope",function($rootScope){
@@ -37,15 +37,16 @@ yike.run(["$rootScope",function($rootScope){
 		
 	}
 }])
+
 //解决锚点乱码bug
 yike.config(function($locationProvider){
-	$locationProvider.hashPrefix('');
+	$locationProvider.hashPrefix("");
 });
 //配置路由
-yike.config(['$routeProvider',function($routeProvider){
+yike.config(["$routeProvider",function($routeProvider){
 	//配置路由具体内容
 	$routeProvider.when('/today',{
-		templateUrl:"./views/today.html";
+		templateUrl:"./views/today.html"
 	})
 }]);
 
