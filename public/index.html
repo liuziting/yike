@@ -18,7 +18,8 @@
 					</div>
 					<span>登录</span>
 				</dt>
-				<dd ng-class="{active:key==0}" ng-repeat="(key,nav) in navs">				
+				<dd ng-class="{active:key==0}" ng-repeat="(key,nav) in navs">
+				<!-- {{key}}{{nav}} 打印结果：0 {link:"#/today",icon:"icon-home",text:"今日一刻"} 所以，key是下标，nav是数据-->		
 					<a ng-click="toggle()" href="{{nav.link}}" class="{{nav.icon}}">
 						<span>{{nav.text}}</span>
 					</a>
@@ -31,14 +32,18 @@
 		</div>
 		<div class="container">
 			<!-- 头部 -->
-			<div class="header" ng-class="{body:true,collapse:collapsed}">
+			<div ng-class="{header:true,collapse:collapsed}">
 				<a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
 				<h2>今日一刻</h2>
 				<a href="javascript:;" class="search icon-search"></a>
 			</div>
 			<!-- 主体 -->
-			<div class="body" ng-class="{body:true,collapse:collapsed}">
-			<div loading src="public/images/loading2.gif" ng-hide="loading"></div>  
+			<div ng-class="{body:true,collapse:collapsed}">
+			<!-- <div ng-hide="loading">
+				<img src="public/images/loading2.gif" height="200" width="160" alt="">
+			</div>	 -->
+			<!-- 使用自定义指令，添加image节点 -->
+			<div loading src="public/images/loading2.gif" ng-hide="loading"></div>
 			<div ng-view></div>
 			</div>
 		</div>

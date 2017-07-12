@@ -36,7 +36,7 @@ yike.run(["$rootScope",function($rootScope){
 		}
 		
 	}
-}]);
+}])
 
 //解决锚点乱码bug
 yike.config(function($locationProvider){
@@ -49,8 +49,7 @@ yike.config(["$routeProvider",function($routeProvider){
 		templateUrl:"./views/today.html",
 		controller:"todayCtrl"
 	}).when('/older',{
-		templateUrl:"./views/older.html",
-		controller:"olderCtrl"
+		templateUrl:"./views/older.html"
 	})
 }]);
 
