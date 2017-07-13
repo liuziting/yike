@@ -51,6 +51,14 @@ yike.config(["$routeProvider",function($routeProvider){
 	}).when('/older',{
 		templateUrl:"./views/older.html",
 		controller:"olderCtrl"
+	}).when('/author',{
+		templateUrl:"./views/author.html",
+		controller:"authorCtrl"
+	}).when('/category',{
+		templateUrl:"./views/category.html",
+		controller:"categoryCtrl"
+	}).when('/settings',{
+		templateUrl:"./views/settings.html"
 	})
 }]);
 

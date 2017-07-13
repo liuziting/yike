@@ -50,7 +50,28 @@ angular.module("Controllers",[])
 	})
 	
 }])
-
+.controller("authorCtrl",["$scope","$filter","$http","$rootScope",function($scope,$filter,$http,$rootScope){
+	$rootScope.loading = false;
+	$http({
+		url:"./api/author.php",//请求地址从后台发送 解决跨域问题
+		method:"get"
+	}).then(function(result){
+		$rootScope.loading = true;
+		$scope.authors = result.data.authors;
+	})
+	
+}])
+.controller("categoryCtrl",["$scope","$filter","$http","$rootScope",function($scope,$filter,$http,$rootScope){
+	$rootScope.loading = false;
+	$http({
+		url:"./api/category.php",//请求地址从后台发送 解决跨域问题
+		method:"get"
+	}).then(function(result){
+		$rootScope.loading = true;
+		$scope.columns = result.data.columns;
+	})
+	
+}])
 
 
 
